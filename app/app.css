@@ -5,7 +5,8 @@
 
 .frame {
     height: 5rem;
-    width: 100vw;
+    width: 90vw;
     border: black 2px solid;
+    padding-bottom: 25rem;
 }
 

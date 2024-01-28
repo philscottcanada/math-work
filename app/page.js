@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <div className="container">
       <li className="links">
-        <ul><button><Link className="links" href='/addition'> Addition Problems</Link></button></ul>
         <ul><Link className="links" href='/addition'> Addition Problems</Link></ul>
         <ul><Link className="links" href='/subtraction'> Subtraction Problems</Link></ul>
         <ul><Link className="links" href='/multiply'> Multiplication Problems</Link></ul>

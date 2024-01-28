@@ -1,6 +1,30 @@
-.frame {
+.header-container {
     height: 5rem;
-    width: 100vw;
-    border: black 2px solid;
+    width: 99vw;
+    margin: 0 .25rem;
+    margin-bottom: 3rem;
+    border: black .5px solid;
+    border-radius: 10px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 40px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+.links-items {
+    display: flex;
+}
+
+.items {
+    margin: 0 1rem;
+    text-decoration: none;
 }
