@@ -1,0 +1,6 @@
+.frame {
+    height: 5rem;
+    width: 100vw;
+    border: black 2px solid;
+    background-color: aqua;
+}

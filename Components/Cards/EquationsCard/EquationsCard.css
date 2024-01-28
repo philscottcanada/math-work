@@ -1,0 +1,49 @@
+.container {
+    
+}
+
+.card {
+    height: 10rem;
+    width: 10rem;
+    border: 2px black solid;
+    border-radius: 10px;
+}
+
+.columns {
+    display: flex;
+    padding-top: 1.5rem;
+}
+
+.col1 {
+    margin-left: .75rem;
+    padding-right: 1rem;
+    font-weight: bold;
+    
+}
+
+.col2{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    border-bottom: 3px black solid;
+}
+
+.col3 {
+    width: 70px;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.num1 {
+    padding-bottom: 3px ;
+    padding-left: 1.3rem;
+}
+
+
+.sumLine {
+    border-top: 3px black solid;
+    margin-top: .5rem;
+    width: 5.3rem
+}
