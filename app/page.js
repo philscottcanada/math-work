@@ -11,6 +11,7 @@ export default function Home() {
         <ul><Link className="links" href='/addition'> Addition Problems</Link></ul>
         <ul><Link className="links" href='/subtraction'> Subtraction Problems</Link></ul>
         <ul><Link className="links" href='/multiply'> Multiplication Problems</Link></ul>
+        <ul><Link className="links" href='/multiply-decimal'> CHRISTIE SPECIAL!!!</Link></ul>
         <ul><Link className="links" href='/timestable'> 12 X 12 Times Table</Link></ul>
         <ul><Link className="links" href='/add-subtract'> Mixed - Add/Subtract + - Problems</Link></ul>
         <ul><Link className="links" href='/add-subtract-multiply'> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
