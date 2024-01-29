@@ -40,7 +40,7 @@ export default function Multiply() {
     return obj
   }
 
-  const numberOfQuestions = 20;
+  const numberOfQuestions = 100;
   for (let i=0; i<numberOfQuestions; i++){
     mathArray.push(equation(i+1))
   }

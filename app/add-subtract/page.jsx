@@ -52,7 +52,7 @@ export default function AddSubtract() {
     return obj
   }
 
-  const numberOfQuestions = 10;
+  const numberOfQuestions = 100;
   for (let i=0; i<numberOfQuestions; i++){
     mathArray.push(equation(i+1))
   }
