@@ -15,7 +15,7 @@ RUN npm run build
 FROM --platform=linux/AMD64 nginx:1.25.2-alpine-slim
 ENV NODE_ENV deployment
 # Copy built assets from builder
-COPY --from=builder /build /usr/share/nginx/html
+COPY --from=builder /.next /usr/share/nginx/html
 
 # # Add your nginx.conf
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
