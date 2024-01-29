@@ -1,9 +1,18 @@
-import EquationsCard from '../../Components/Cards/EquationsCard/EquationsCard.jsx'
-import AnswerCard from '../../Components/Cards/AnswerCard/AnswerCard.jsx';
+"use client"
+import dynamic from 'next/dynamic.js';
+const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
+const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
 import './addition.css'
+import { useEffect } from 'react';
 
 export default function Additions() {
-    
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.print()
+    }, 500)
+  }, [])
+  
   let mathArray = [];
 
   function commaNumber(x) { //puts a comma in the number (string) (in the thousands)
@@ -12,7 +21,7 @@ export default function Additions() {
 
   function equation(num){
     const questionNumber = num;
-    const highNumber = 100;
+    const highNumber = 10;
 
     let a = Math.floor(Math.random() * highNumber);
     let b = Math.floor(Math.random() * highNumber);
