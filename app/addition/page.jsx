@@ -21,7 +21,7 @@ export default function Additions() {
 
   function equation(num){
     const questionNumber = num;
-    const highNumber = 10;
+    const highNumber = 10000;
 
     let a = Math.floor(Math.random() * highNumber);
     let b = Math.floor(Math.random() * highNumber);
