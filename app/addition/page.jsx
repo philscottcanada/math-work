@@ -3,16 +3,15 @@ import dynamic from 'next/dynamic.js';
 const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
 const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
 import './addition.css'
-import { useEffect } from 'react';
 
-export default function Additions() {
-
-  useEffect(() => {
-    setTimeout(() => {
-      window.print()
-    }, 500)
-  }, [])
+export default function Additions( {searchParams} ) {
   
+  var highNumber;
+  if (searchParams.digits == '4') {highNumber = 10000;}
+  else if (searchParams.digits == '3') {highNumber = 1000;}
+  else if (searchParams.digits == '2') {highNumber = 100;}
+  else {highNumber = 10;}
+    
   let mathArray = [];
 
   function commaNumber(x) { //puts a comma in the number (string) (in the thousands)
@@ -21,7 +20,6 @@ export default function Additions() {
 
   function equation(num){
     const questionNumber = num;
-    const highNumber = 10000;
 
     let a = Math.floor(Math.random() * highNumber);
     let b = Math.floor(Math.random() * highNumber);
@@ -48,7 +46,7 @@ export default function Additions() {
     return obj
   }
 
-  const numberOfQuestions = 100;
+  const numberOfQuestions = searchParams.questions;
   for (let i=0; i<numberOfQuestions; i++){
     mathArray.push(equation(i+1))
   }

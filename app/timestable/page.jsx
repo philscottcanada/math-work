@@ -3,7 +3,7 @@ import EquationsCard from '../../Components/Cards/EquationsCard/EquationsCard.js
 import AnswerCard from '../../Components/Cards/AnswerCard/AnswerCard.jsx';
 import './timesTable.css'
 
-export default function TimesTable() {
+export default function TimesTable({ searchParams }) {
     
   let mathArray = [];
 
@@ -26,15 +26,15 @@ export default function TimesTable() {
     return obj
   }
 
-  const numberOfQuestions = 100;
+  const numberOfQuestions = searchParams.questions;
   for (let i=0; i<numberOfQuestions; i++){
     mathArray.push(equation(i+1))
   }
 
   return(
     <div className="container">
-      <Image src={'/MultiplicationTable.jpeg'} alt='Times Table Image' width={1200} height={800}></Image>
-      <div className="top-spacer"></div>
+      {/* <Image src={'/MultiplicationTable.jpeg'} alt='Times Table Image' width={1200} height={800}></Image>
+      <div className="top-spacer"></div> */}
       {mathArray.map((eq) => {
         {if (eq.number > 1 && eq.number%20 == 1){
           return(

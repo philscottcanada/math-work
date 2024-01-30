@@ -2,7 +2,7 @@ import EquationsCard from '../../Components/Cards/EquationsCard/EquationsCard.js
 import AnswerCard from '../../Components/Cards/AnswerCard/AnswerCard.jsx';
 import './multiplyDecimal.css'
 
-export default function MultiplyDecimal() {
+export default function MultiplyDecimal( {searchParams} ) {
     
   let mathArray = [];
 
@@ -40,7 +40,7 @@ export default function MultiplyDecimal() {
     return obj
   }
 
-  const numberOfQuestions = 100;
+  const numberOfQuestions = searchParams.questions;
   for (let i=0; i<numberOfQuestions; i++){
     mathArray.push(equation(i+1))
   }
