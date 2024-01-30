@@ -1,22 +1,49 @@
+"use client"
 import Link from "next/link";
 import './app.css'
+import { useState } from "react";
 
 export default function Home() {
   
-  
+  const [questionsVal, setQuestionsVal] = useState("100")
+  const [digitsVal, setDigitsVal] = useState("4")
   
   return (
-    <div className="container">
-      <li className="links">
-        <ul><Link className="links" href='/addition'> Addition Problems</Link></ul>
-        <ul><Link className="links" href='/subtraction'> Subtraction Problems</Link></ul>
-        <ul><Link className="links" href='/multiply'> Multiplication Problems</Link></ul>
-        <ul><Link className="links" href='/multiply-decimal'> CHRISTIE SPECIAL!!!</Link></ul>
-        <ul><Link className="links" href='/timestable'> 12 X 12 Times Table</Link></ul>
-        <ul><Link className="links" href='/add-subtract'> Mixed - Add/Subtract + - Problems</Link></ul>
-        <ul><Link className="links" href='/add-subtract-multiply'> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
-        <ul><Link className="links" href='/test'>Test Page</Link></ul>
-      </li>  
+    <div>
+      <div className="container">
+        <li className="links">
+          <ul><Link className="links" href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal}}}> Addition Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal}}}> Subtraction Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal}}}> Multiplication Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal}}}> CHRISTIE SPECIAL!!!</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal}}}> 12 X 12 Times Table</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal}}}> Mixed - Add/Subtract + - Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
+        </li>  
+      </div>
+      <div>
+        <label htmlFor="questions"># of Questions: </label>
+        <select name="questions" id="questions" defaultValue={'100'} 
+          onChange={()=>{
+            setQuestionsVal(questions.value)}}>
+          <option value="20">20</option>
+          <option value="40">40</option>
+          <option value="60">60</option>
+          <option value="80">80</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="questions">Max # of Digits: </label>
+        <select name="digits" id="digits" defaultValue={'4'} 
+          onChange={()=>{
+            setDigitsVal(digits.value)}}>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
     </div>
   );
 }

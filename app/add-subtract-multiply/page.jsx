@@ -2,7 +2,13 @@ import EquationsCard from '../../Components/Cards/EquationsCard/EquationsCard.js
 import AnswerCard from '../../Components/Cards/AnswerCard/AnswerCard.jsx';
 import './addSubtractMultiply.css'
 
-export default function addSubtractMultiply() {
+export default function AddSubtractMultiply( {searchParams} ) {
+  
+  var highNumber;
+  if (searchParams.digits == '4') {highNumber = 10000;}
+  else if (searchParams.digits == '3') {highNumber = 1000;}
+  else if (searchParams.digits == '2') {highNumber = 100;}
+  else {highNumber = 10;}
     
   let mathArray = [];
 
@@ -25,7 +31,6 @@ export default function addSubtractMultiply() {
   }
   function equation(num){
     const questionNumber = num;
-    let highNumber = 10000;
 
     let a = Math.floor(Math.random() * highNumber);
     let b = Math.floor(Math.random() * highNumber);
@@ -33,7 +38,7 @@ export default function addSubtractMultiply() {
     let operator
     let total
         
-    const randomPicker = Math.floor(Math.random() * 3); //picks a random number, either 0 or 1 (+ or -)
+    const randomPicker = Math.floor(Math.random() * 3); //picks a random number, either 0, 1 or 2 (for - or + or *)
     
     if (randomPicker==0){ //randomize the operator and calculate the correct total
       const numbers = numberSort(a, b);
@@ -50,11 +55,13 @@ export default function addSubtractMultiply() {
       total = a + b;
     }
     else if (randomPicker==2) {
+      const realHighNumber = highNumber;
       highNumber = 13
       a = Math.floor(Math.random() * highNumber);
       b = Math.floor(Math.random() * highNumber);
       operator = 'x'
       total = a * b;
+      highNumber = realHighNumber;
     }
 
     a = commaNumber(a);
@@ -71,7 +78,7 @@ export default function addSubtractMultiply() {
     return obj
   }
 
-  const numberOfQuestions = 100;
+  const numberOfQuestions = searchParams.questions;
   for (let i=0; i<numberOfQuestions; i++){
     mathArray.push(equation(i+1))
   }

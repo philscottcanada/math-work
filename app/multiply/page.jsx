@@ -2,7 +2,13 @@ import EquationsCard from '../../Components/Cards/EquationsCard/EquationsCard.js
 import AnswerCard from '../../Components/Cards/AnswerCard/AnswerCard.jsx';
 import './multiply.css'
 
-export default function Multiply() {
+export default function Multiply( {searchParams} ) {
+  
+  var highNumber;
+  if (searchParams.digits == '4') {highNumber = 10000;}
+  else if (searchParams.digits == '3') {highNumber = 1000;}
+  else if (searchParams.digits == '2') {highNumber = 100;}
+  else {highNumber = 10;}
     
   let mathArray = [];
 
@@ -12,7 +18,6 @@ export default function Multiply() {
 
   function equation(num){
     const questionNumber = num;
-    const highNumber = 100;
 
     let a = Math.floor(Math.random() * highNumber);
     let b = Math.floor(Math.random() * highNumber);
@@ -40,7 +45,7 @@ export default function Multiply() {
     return obj
   }
 
-  const numberOfQuestions = 100;
+  const numberOfQuestions = searchParams.questions;
   for (let i=0; i<numberOfQuestions; i++){
     mathArray.push(equation(i+1))
   }
