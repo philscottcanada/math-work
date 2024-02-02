@@ -104,7 +104,7 @@ export default function Additions( {searchParams} ) {
           <AnswerCard key={eq.number} eq={eq} />
         )
       })}
-      <button onClick={handleClick}>Download PDF</button>
+      {/* <button onClick={handleClick}>Download PDF</button> */}
     </div>
   )
 }
