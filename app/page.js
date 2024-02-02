@@ -7,18 +7,20 @@ export default function Home() {
   
   const [questionsVal, setQuestionsVal] = useState("100")
   const [digitsVal, setDigitsVal] = useState("4")
+
+  const [selectedOutput, setSelectedOutput] = useState("web")
   
   return (
     <div>
       <div className="container">
         <li className="links">
-          <ul><Link className="links" href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal}}}> Addition Problems</Link></ul>
-          <ul><Link className="links" href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal}}}> Subtraction Problems</Link></ul>
-          <ul><Link className="links" href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal}}}> Multiplication Problems</Link></ul>
-          <ul><Link className="links" href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal}}}> CHRISTIE SPECIAL!!!</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Addition Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Subtraction Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Multiplication Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> CHRISTIE SPECIAL!!!</Link></ul>
           <ul><Link className="links" href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal}}}> 12 X 12 Times Table</Link></ul>
-          <ul><Link className="links" href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal}}}> Mixed - Add/Subtract + - Problems</Link></ul>
-          <ul><Link className="links" href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract + - Problems</Link></ul>
+          <ul><Link className="links" href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
         </li>  
       </div>
       <div>
@@ -43,6 +45,16 @@ export default function Home() {
           <option value="3">3</option>
           <option value="4">4</option>
         </select>
+        <div>
+          <div>
+            <input type="radio" className="radio" name="outputType" value="web" checked={selectedOutput==='web'} onChange={()=>{setSelectedOutput('web')}}/>
+            <label htmlFor="radio">Web</label>
+          </div>
+          <div>
+            <input type="radio" className="radio" name="outputType" value="pdf" checked={selectedOutput==='pdf'} onChange={()=>{setSelectedOutput('pdf')}} />
+            <label htmlFor="radio">PDF</label>
+          </div>
+        </div>
       </div>
     </div>
   );
