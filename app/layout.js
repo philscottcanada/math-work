@@ -6,7 +6,7 @@ import Header from '../Components/Header/header'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Math Work Sheet",
+  title: "MathSheets.Online FREE",
   description: "MathSheets.Online - Math Work for Your Children",
 };
 

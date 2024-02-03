@@ -48,11 +48,11 @@ export default function Home() {
         <div>
           <div>
             <input type="radio" className="radio" name="outputType" value="web" checked={selectedOutput==='web'} onChange={()=>{setSelectedOutput('web')}}/>
-            <label htmlFor="radio">Web</label>
+            <label htmlFor="radio">Web Only</label>
           </div>
           <div>
             <input type="radio" className="radio" name="outputType" value="pdf" checked={selectedOutput==='pdf'} onChange={()=>{setSelectedOutput('pdf')}} />
-            <label htmlFor="radio">PDF</label>
+            <label htmlFor="radio">Web + PDF File Download</label>
           </div>
         </div>
       </div>

@@ -1,42 +1,22 @@
 "use client"
 import dynamic from 'next/dynamic.js';
+import { useEffect, useRef } from 'react';
+import { printPDF } from '../../Components/PrintPDF/printPDF.js'
+import './addition.css'
 const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
 const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
-import './addition.css'
-
-import html2canvas from 'html2canvas'
-import jsPDF from 'jspdf'
-import { useRef } from 'react';
-
 
 export default function Additions( {searchParams} ) {
 
   const pdfRef = useRef();
 
-  function handleClick(){
-    const pages =  (searchParams.questions / 20) + 1;
-    const input = pdfRef.current;
-    html2canvas(input, {
-      windowWidth: 760,
-      width: 760,
-    }).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'letter', true);
-      const pdfPageWidth = pdf.internal.pageSize.getWidth();
-      const pdfPageHeight = pdf.internal.pageSize.getHeight();
-  
-      let position = 5
-
-      for (var i = 0; i < pages; i++) {
-        if (i > 0) {
-          pdf.addPage();
-        }
-        pdf.addImage(imgData, 'PNG', 4, position, pdfPageWidth, pdfPageHeight * pages * 0.65);
-        position -= (pdfPageHeight+7);
-      }
-      pdf.save('math.pdf');
-    })
-  }
+  useEffect(()=>{
+    if (searchParams.output == 'pdf'){
+      setTimeout(()=>{
+        printPDF(pdfRef, searchParams.questions)
+      }, 500)
+    }
+  }, [])
   
   var highNumber;
   if (searchParams.digits == '4') {highNumber = 10000;}
@@ -84,7 +64,6 @@ export default function Additions( {searchParams} ) {
   }
 
   return(
-    <div>
     <div className="container" ref={pdfRef}>
       {mathArray.map((eq) => {
         {if (eq.number > 1 && eq.number%20 == 1){
@@ -111,9 +90,6 @@ export default function Additions( {searchParams} ) {
           <AnswerCard key={eq.number} eq={eq} />
         )
       })}
-      
-    </div>
-    <button onClick={handleClick}>Download PDF</button>
     </div>
   )
 }
