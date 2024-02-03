@@ -14,21 +14,27 @@ export default function Additions( {searchParams} ) {
   const pdfRef = useRef();
 
   function handleClick(){
+    const pages =  (searchParams.questions / 20) + 1;
     const input = pdfRef.current;
-    html2canvas(input).then((canvas) => {
+    html2canvas(input, {
+      windowWidth: 760,
+      width: 760,
+    }).then((canvas) => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'mm', 'letter', true);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      const imgX = (pdfWidth - imgWidth * ratio) /2;
-      const imgY = 30;
-      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-      //pdf.addImage(imgData, 'PNG', 8.5, 11, 1, 1);
+      const pdfPageWidth = pdf.internal.pageSize.getWidth();
+      const pdfPageHeight = pdf.internal.pageSize.getHeight();
+  
+      let position = 5
+
+      for (var i = 0; i < pages; i++) {
+        if (i > 0) {
+          pdf.addPage();
+        }
+        pdf.addImage(imgData, 'PNG', 4, position, pdfPageWidth, pdfPageHeight * pages * 0.65);
+        position -= (pdfPageHeight+7);
+      }
       pdf.save('math.pdf');
-      //console.log("pdfWidth",pdfWidth, "pdfHeight", pdfHeight, "canvasWidth", imgWidth, "canvasHeight", imgHeight, "ratio", ratio)
     })
   }
   
@@ -78,6 +84,7 @@ export default function Additions( {searchParams} ) {
   }
 
   return(
+    <div>
     <div className="container" ref={pdfRef}>
       {mathArray.map((eq) => {
         {if (eq.number > 1 && eq.number%20 == 1){
@@ -104,7 +111,9 @@ export default function Additions( {searchParams} ) {
           <AnswerCard key={eq.number} eq={eq} />
         )
       })}
-      {/* <button onClick={handleClick}>Download PDF</button> */}
+      
+    </div>
+    <button onClick={handleClick}>Download PDF</button>
     </div>
   )
 }
