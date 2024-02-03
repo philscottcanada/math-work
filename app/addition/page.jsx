@@ -1,36 +1,22 @@
 "use client"
 import dynamic from 'next/dynamic.js';
+import { useEffect, useRef } from 'react';
+import { printPDF } from '../../Components/PrintPDF/printPDF.js'
 const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
 const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
 import './addition.css'
-
-import html2canvas from 'html2canvas'
-import jsPDF from 'jspdf'
-import { useRef } from 'react';
-
 
 export default function Additions( {searchParams} ) {
 
   const pdfRef = useRef();
 
-  function handleClick(){
-    const input = pdfRef.current;
-    html2canvas(input).then((canvas) => {
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'letter', true);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const imgWidth = canvas.width;
-      const imgHeight = canvas.height;
-      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-      const imgX = (pdfWidth - imgWidth * ratio) /2;
-      const imgY = 30;
-      pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-      //pdf.addImage(imgData, 'PNG', 8.5, 11, 1, 1);
-      pdf.save('math.pdf');
-      //console.log("pdfWidth",pdfWidth, "pdfHeight", pdfHeight, "canvasWidth", imgWidth, "canvasHeight", imgHeight, "ratio", ratio)
-    })
-  }
+  useEffect(()=>{
+    if (searchParams.output == 'pdf'){
+      setTimeout(()=>{
+        printPDF(pdfRef, searchParams.questions)
+      }, 500)
+    }
+  }, [])
   
   var highNumber;
   if (searchParams.digits == '4') {highNumber = 10000;}
@@ -104,7 +90,6 @@ export default function Additions( {searchParams} ) {
           <AnswerCard key={eq.number} eq={eq} />
         )
       })}
-      {/* <button onClick={handleClick}>Download PDF</button> */}
     </div>
   )
 }

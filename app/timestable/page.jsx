@@ -1,9 +1,22 @@
-import Image from 'next/image'
-import EquationsCard from '../../Components/Cards/EquationsCard/EquationsCard.jsx'
-import AnswerCard from '../../Components/Cards/AnswerCard/AnswerCard.jsx';
+"use client"
+import dynamic from 'next/dynamic.js';
+import { useEffect, useRef } from 'react';
+import { printPDF } from '../../Components/PrintPDF/printPDF.js'
+const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
+const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
 import './timesTable.css'
 
 export default function TimesTable({ searchParams }) {
+
+  const pdfRef = useRef();
+
+  useEffect(()=>{
+    if (searchParams.output == 'pdf'){
+      setTimeout(()=>{
+        printPDF(pdfRef, searchParams.questions)
+      }, 500)
+    }
+  }, [])  
     
   let mathArray = [];
 
@@ -32,9 +45,7 @@ export default function TimesTable({ searchParams }) {
   }
 
   return(
-    <div className="container">
-      {/* <Image src={'/MultiplicationTable.jpeg'} alt='Times Table Image' width={1200} height={800}></Image>
-      <div className="top-spacer"></div> */}
+    <div className="container" ref={pdfRef}>
       {mathArray.map((eq) => {
         {if (eq.number > 1 && eq.number%20 == 1){
           return(

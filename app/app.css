@@ -1,5 +1,23 @@
+
 .links {
     text-decoration: none;
     list-style-type: none;
 }
 
+.container-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.questions-container{
+    border-left: 1px black solid
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container{
+        display: flex;
+    }
+}

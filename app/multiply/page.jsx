@@ -1,9 +1,23 @@
-import EquationsCard from '../../Components/Cards/EquationsCard/EquationsCard.jsx'
-import AnswerCard from '../../Components/Cards/AnswerCard/AnswerCard.jsx';
+"use client"
+import dynamic from 'next/dynamic.js';
+import { useEffect, useRef } from 'react';
+import { printPDF } from '../../Components/PrintPDF/printPDF.js'
+const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
+const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
 import './multiply.css'
 
 export default function Multiply( {searchParams} ) {
   
+  const pdfRef = useRef();
+
+  useEffect(()=>{
+    if (searchParams.output == 'pdf'){
+      setTimeout(()=>{
+        printPDF(pdfRef, searchParams.questions)
+      }, 500)
+    }
+  }, [])
+
   var highNumber;
   if (searchParams.digits == '4') {highNumber = 10000;}
   else if (searchParams.digits == '3') {highNumber = 1000;}
@@ -51,7 +65,7 @@ export default function Multiply( {searchParams} ) {
   }
 
   return(
-    <div className="container">
+    <div className="container" ref={pdfRef}>
       {mathArray.map((eq) => {
         {if (eq.number > 1 && eq.number%20 == 1){
           return(
