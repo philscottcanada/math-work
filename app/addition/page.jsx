@@ -2,9 +2,9 @@
 import dynamic from 'next/dynamic.js';
 import { useEffect, useRef } from 'react';
 import { printPDF } from '../../Components/PrintPDF/printPDF.js'
-import './addition.css'
 const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
 const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
+import './addition.css'
 
 export default function Additions( {searchParams} ) {
 
