@@ -1,8 +1,8 @@
 .header-container {
     height: 5rem;
-    width: 99vw;
-    margin: 0 .25rem;
-    margin-bottom: 0rem;
+    width: 100%;
+    /* margin: 0 .25rem; */
+    /* margin-bottom: 0rem; */
     border: black .5px solid;
     border-radius: 10px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 40px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
