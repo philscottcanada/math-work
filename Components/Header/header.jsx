@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import './header.css'
 import Link from 'next/link'
@@ -7,7 +8,8 @@ function header() {
     <div className='header-container'>
       <ul className="list">
         <div className='logo'>
-          <li className='items'><Link href={'/'}>Logo</Link></li>
+          <li className='items menu' onClick={()=>{console.log('Menu Clicked')}}>+</li>
+          <li className='items logo-image'><Link href={'/'}>Logo</Link></li>
         </div>
         <div className='links-items'>
           <li className='items'><Link href={'/'}>Home</Link></li>

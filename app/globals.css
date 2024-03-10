@@ -1,6 +1,21 @@
-body {
-  margin: 0;
-  padding:0;
+* {
   box-sizing: border-box;
-  background-color: rgb(235, 235, 235);
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+
+  --font-dark-green: #1A5336;
+  --font-type--light-green: #188222;
+  --font-header-light-green: #1B8B25;
+  --font-black: #1C1C1C;
+  --font-white: #FFFFFF;
+  --bg-grey: #F3F3F3;
+  --border-grey: #CCCCCC;
+  --forest-green: #1B8B25;
+  --light-green: #58D453;
+}
+
+body{
+  margin-top: 100px;
 }

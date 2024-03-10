@@ -1,15 +1,18 @@
 .header-container {
     height: 5rem;
     width: 100%;
-    /* margin: 0 .25rem; */
-    /* margin-bottom: 0rem; */
-    border: black .5px solid;
-    border-radius: 10px;
+    border: var(--border-grey) .5px solid;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 40px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-    background-color: aqua;
+    background-color: var(--forest-green);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+li.items>a{
+   color: var(--font-white); 
 }
 
 .list {
@@ -26,5 +29,12 @@
 
 .items {
     margin: 0 1rem;
-    text-decoration: none;
+}
+
+.logo-image {
+    display: none;
+}
+
+.links-items {
+    /* display: none;  */
 }

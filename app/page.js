@@ -13,17 +13,6 @@ export default function Home() {
   return (
     <div>
       <div className="container">
-        <div className="container-links">
-          <li className="links">
-            <ul><Link className="links" href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Addition Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Subtraction Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Multiplication Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> CHRISTIE SPECIAL!!!</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> 12 X 12 Times Table</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract + - Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
-          </li>  
-        </div>
         <div className="container-options">
           <div className="questions-container">
             <label htmlFor="questions"># of Questions: </label>
@@ -58,6 +47,17 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="container-links">
+          <li className="links">
+            <ul><Link className="links" href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Addition Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Subtraction Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Multiplication Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> CHRISTIE SPECIAL!!!</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> 12 X 12 Times Table</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract + - Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
+          </li>  
         </div>
       </div>
     </div>
