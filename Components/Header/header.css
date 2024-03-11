@@ -24,17 +24,32 @@ li.items>a{
 
 }
 .links-items {
-    display: flex;
+    display: none;
 }
 
 .items {
     margin: 0 1rem;
 }
 
-.logo-image {
-    display: none;
+.logo {
+    display: flex;
 }
 
-.links-items {
-    /* display: none;  */
+.logo-image{
+    position: fixed;
+    right: 20px;
+}
+
+@media (min-width:600px){
+    .links-items{
+        display: flex;
+    }
+    .menu-image{
+        visibility: hidden;
+    }
+
+    .logo-image{
+        position:unset; 
+    }
+    
 }

@@ -1,13 +1,12 @@
 "use client"
+import { useState } from "react";
 import Link from "next/link";
 import './app.css'
-import { useState } from "react";
 
 export default function Home() {
   
   const [questionsVal, setQuestionsVal] = useState("100")
   const [digitsVal, setDigitsVal] = useState("4")
-
   const [selectedOutput, setSelectedOutput] = useState("web")
   
   return (
@@ -36,27 +35,29 @@ export default function Home() {
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
-            <div>
-              <div>
-                <input type="radio" className="radio" name="outputType" value="web" checked={selectedOutput==='web'} onChange={()=>{setSelectedOutput('web')}}/>
-                <label htmlFor="radio">Web Only</label>
-              </div>
-              <div>
-                <input type="radio" className="radio" name="outputType" value="pdf" checked={selectedOutput==='pdf'} onChange={()=>{setSelectedOutput('pdf')}} />
-                <label htmlFor="radio">Web + PDF File Download</label>
-              </div>
-            </div>
+            
+          </div>
+          
+        </div>
+        <div className="radio-button-container">
+          <div>
+            <input type="radio" className="radio" name="outputType" value="web" checked={selectedOutput==='web'} onChange={()=>{setSelectedOutput('web')}}/>
+            <label htmlFor="radio">Web Only</label>
+          </div>
+          <div>
+            <input type="radio" className="radio" name="outputType" value="pdf" checked={selectedOutput==='pdf'} onChange={()=>{setSelectedOutput('pdf')}} />
+            <label htmlFor="radio">Web + PDF File Download</label>
           </div>
         </div>
         <div className="container-links">
-          <li className="links">
-            <ul><Link className="links" href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Addition Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Subtraction Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Multiplication Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> CHRISTIE SPECIAL!!!</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> 12 X 12 Times Table</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract + - Problems</Link></ul>
-            <ul><Link className="links" href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
+          <li className="">
+            <ul className="links"><Link href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Addition Problems</Link></ul>
+            <ul className="links"><Link href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Subtraction Problems</Link></ul>
+            <ul className="links"><Link href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Multiplication Problems</Link></ul>
+            <ul className="links"><Link href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> CHRISTIE SPECIAL!!!</Link></ul>
+            <ul className="links"><Link href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> 12 X 12 Times Table</Link></ul>
+            <ul className="links"><Link href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract + - Problems</Link></ul>
+            <ul className="links"><Link href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
           </li>  
         </div>
       </div>

@@ -1,14 +1,24 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import './header.css'
 import Link from 'next/link'
 
+import MenuModal from "../MenuModal/menuModal";
+
 function header() {
+  const [showModal, setShowModal] = useState(false)
+  
+  function modalClick(e) {
+    e.stopPropagation()
+    setShowModal(!showModal)
+  }
+
   return (
     <div className='header-container'>
+      {showModal ? <MenuModal modalClick={modalClick}/> : <></>}
       <ul className="list">
         <div className='logo'>
-          <li className='items menu' onClick={()=>{console.log('Menu Clicked')}}>+</li>
+          <li className='items menu-image' onClick={modalClick}>+</li>
           <li className='items logo-image'><Link href={'/'}>Logo</Link></li>
         </div>
         <div className='links-items'>
