@@ -4,7 +4,7 @@ import './EquationsCard.css'
 function equationscard({ eq } ) {
   
   return (
-      <div className="container">
+      <div className="card-container">
           <div className="card">
               <div className="columns">
                 <div className="col1">{eq.number})</div>

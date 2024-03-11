@@ -47,7 +47,7 @@ li.items>a{
     right: 20px;
 }
 
-@media (min-width:600px){
+@media (min-width:720px){
     .links-items{
         display: flex;
     }

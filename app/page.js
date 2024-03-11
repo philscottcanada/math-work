@@ -11,13 +11,13 @@ export default function Home() {
   
   return (
     <div>
-      <div className="container">
+      <div className="page-container">
         <div className="container-options">
           <div className="questions-container">
-            <label htmlFor="questions"># of Questions: </label>
-            <select name="questions" id="questions" defaultValue={'100'} 
+            <label htmlFor="quests"># of Questions: </label>
+            <select name="quests" id="quests" defaultValue={'100'} 
               onChange={()=>{
-                setQuestionsVal(questions.value)}}>
+                setQuestionsVal(quests.value)}}>
               <option value="20">20</option>
               <option value="40">40</option>
               <option value="60">60</option>
@@ -26,10 +26,10 @@ export default function Home() {
             </select>
           </div>
           <div className="questions-container">
-            <label htmlFor="questions">Max # of Digits: </label>
-            <select name="digits" id="digits" defaultValue={'4'} 
+            <label htmlFor="digs">Max # of Digits: </label>
+            <select name="digs" id="digs" defaultValue={'4'} 
               onChange={()=>{
-                setDigitsVal(digits.value)}}>
+                setDigitsVal(digs.value)}}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -41,12 +41,12 @@ export default function Home() {
         </div>
         <div className="radio-button-container">
           <div>
-            <input type="radio" className="radio" name="outputType" value="web" checked={selectedOutput==='web'} onChange={()=>{setSelectedOutput('web')}}/>
-            <label htmlFor="radio">Web Only</label>
+            <input type="radio" className="radio" id="web" name="outputType" value="web" checked={selectedOutput==='web'} onChange={()=>{setSelectedOutput('web')}}/>
+            <label htmlFor="web"> Web Only</label>
           </div>
           <div>
-            <input type="radio" className="radio" name="outputType" value="pdf" checked={selectedOutput==='pdf'} onChange={()=>{setSelectedOutput('pdf')}} />
-            <label htmlFor="radio">Web + PDF File Download</label>
+            <input type="radio" className="radio" id="pdf" name="outputType" value="pdf" checked={selectedOutput==='pdf'} onChange={()=>{setSelectedOutput('pdf')}} />
+            <label htmlFor="pdf"> Web + PDF File Download</label>
           </div>
         </div>
         <div className="container-links">
