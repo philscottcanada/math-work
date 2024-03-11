@@ -25,6 +25,7 @@ li.items>a{
 }
 .links-items {
     display: none;
+    align-items: center;
 }
 
 .items {
@@ -33,6 +34,12 @@ li.items>a{
 
 .logo {
     display: flex;
+    align-items: center;
+}
+.menu-image{
+    color: var(--font-white);
+    font-size: xx-large;
+    cursor: pointer;
 }
 
 .logo-image{
