@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .65rem;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.map-container {
+    display: contents;
+}
+
+.page-spacer {
+    
+    height: 6rem;
+    width: 97vw;
+}
+
+.answers-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}

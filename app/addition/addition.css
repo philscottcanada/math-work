@@ -1,16 +1,24 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .65rem;
+    justify-content: center;
+    overflow: hidden;
+}
+
 .map-container {
-    display: contents
+    display: contents;
 }
 
 .page-spacer {
+    
     height: 6rem;
-    width: 100vw;
+    width: 97vw;
 }
 
-.answers-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.answers-header {
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 

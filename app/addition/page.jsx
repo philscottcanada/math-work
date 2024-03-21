@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react';
 import { printPDF } from '../../Components/PrintPDF/printPDF.js'
 const EquationsCard = dynamic(()=> import('../../Components/Cards/EquationsCard/EquationsCard.jsx'), {ssr: false})
 const AnswerCard = dynamic(()=> import('../../Components/Cards/AnswerCard/AnswerCard.jsx'), {ssr: false})
-import './addition.css'
+import '../equationPage.css'
+
 
 export default function Additions( {searchParams} ) {
 
@@ -82,7 +83,7 @@ export default function Additions( {searchParams} ) {
       
       <div className="answers-title">
         <div className="page-spacer"></div>
-        <h1>These are the Answers</h1>
+        <h1 className='answers-header'>These are the Answers</h1>
       </div>
       
       {mathArray.map((eq) => {

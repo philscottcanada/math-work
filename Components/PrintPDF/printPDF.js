@@ -17,11 +17,11 @@ export function printPDF(pdfRef, questions){
       let ratio;
       
       //apply ratio or else the image stretches
-      if (pages == 2){ratio = 0.65}
-      else if (pages == 3){ratio = 0.83}
-      else if (pages == 4){ratio = 0.91}
-      else if (pages == 5){ratio = 0.97}
-      else {ratio = 1.00}
+      if (pages == 2){ratio = 0.66}//.66 down is shorter , up is longer
+      else if (pages == 3){ratio = 0.83}//.83
+      else if (pages == 4){ratio = 0.91}//.91
+      else if (pages == 5){ratio = 0.97}//.97
+      else {ratio = 1.00}//1.00
 
       for (var i = 0; i < pages; i++) {
         if (i > 0) {
