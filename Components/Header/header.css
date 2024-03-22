@@ -31,6 +31,9 @@ li.items>a{
 .items {
     margin: 0 1rem;
 }
+.items:hover{
+    scale: 1.07;
+}
 
 .logo {
     display: flex;
