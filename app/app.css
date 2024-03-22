@@ -4,6 +4,22 @@
     flex-direction: column;
     justify-content: center;
 }
+.page__donate-message{
+    color: var(--font-dark-green);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    border: var(--font-dark-green) 2px solid;
+    border-radius: 6px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, .15);
+}
+.page__donate-message:hover{
+    scale: 1.02
+}
+.page__donate-message:active{
+    background-color: var(--font-dark-green);
+    color: white;
+}
 
 .container-options {
     display: flex;
@@ -57,6 +73,12 @@
     border-radius: 8px;
     box-shadow: 4px 4px 5px rgba(0, 0, 0, .15);
     padding: 1rem;
+}
+
+@media (min-width:720px){
+    .page__donate-message{
+        display: none;
+    }
 }
 
 

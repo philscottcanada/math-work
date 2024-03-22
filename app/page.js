@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <div>
       <div className="page-container">
+        <Link className="page__donate-message" href={'/donate'}>Be Sure to Donate</Link>
         <div className="container-options">
           <div className="questions-container">
             <label htmlFor="quests"># of Questions: </label>
