@@ -1,0 +1,36 @@
+.donate__container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.donate__message-container{
+    width: 80%;
+    height:50%;
+    margin-top: 4rem;
+    border: var(--border-grey) 5px solid;
+    border-radius: 8px;
+    
+}
+
+.donate__message{
+    color: var(--font-dark-green);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.donate__message-comingsoon{
+    margin-top: 5rem;
+}
+
+.donate__message-paywith{
+    margin-top: 2rem;
+    font-weight: 400;
+    padding: 1rem;
+}
