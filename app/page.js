@@ -51,13 +51,13 @@ export default function Home() {
         </div>
         <div className="container-links">
           <li>
-            <ul className="links"><Link href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Addition Problems</Link></ul>
-            <ul className="links"><Link href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Subtraction Problems</Link></ul>
-            <ul className="links"><Link href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Multiplication Problems</Link></ul>
-            <ul className="links"><Link href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Decimal Multiplication Problems</Link></ul>
-            <ul className="links"><Link href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> 12 X 12 Times Table</Link></ul>
-            <ul className="links"><Link href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract + - Problems</Link></ul>
-            <ul className="links"><Link href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/addition', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Addition Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/subtraction', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Subtraction Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Multiplication Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/multiply-decimal', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Decimal Multiplication Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/timestable', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> 12 X 12 Times Table</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/add-subtract', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract + - Problems</Link></ul>
+            <ul><Link className="links" href= {{pathname: '/add-subtract-multiply', query: {questions: questionsVal, digits: digitsVal, output: selectedOutput}}}> Mixed - Add/Subtract/Multiply + - x Problems</Link></ul>
           </li>  
         </div>
       </div>

@@ -10,6 +10,7 @@
     flex-direction: row;
     justify-content: space-around;
     border: var(--border-grey) 2px solid;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, .15);
     border-radius: 8px;
     padding: 1rem;
     
@@ -34,13 +35,17 @@
     padding: 2rem;
 }
 
+.links{
+    color: var(--font-white);
+    font-weight: bold;
+}
+
 .links:hover{
     scale: 1.02;
 }
 
-.links > a{
-    color: var(--font-white);
-    font-weight: bold;
+.links:active{
+    background-color: var(--forest-green);
 }
 
 .radio-button-container {
@@ -50,6 +55,7 @@
     margin-top: 1.5rem;
     border: var(--border-grey) 2px solid;
     border-radius: 8px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, .15);
     padding: 1rem;
 }
 
