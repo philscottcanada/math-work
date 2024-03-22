@@ -12,14 +12,8 @@ function Donate() {
           <div className="donate__message-paywith">
             Pay with Google Pay, PayPal, Crypto, and more...
           </div>
-          
-          
-        </div>
-
-        
-        
+        </div>        
       </div>
-
     </div>
   )
 }
