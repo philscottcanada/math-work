@@ -1,21 +1,45 @@
-.menu-container{
+.menu__container{
     width: 100%;
     height: 100vh;
-    background-color: white;
+    opacity: 0;  
+}
+.menu__container-loaded{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-grey);
     position: fixed;
     top: 0;
     z-index: 1;
+    opacity: 1;
+    transition: opacity 0.25s ease-in;
 }
 
-.menu-close {
+.menu__close {
     position: relative;
-    top: 20px;
+    cursor: pointer;
+    display:inline;
+    top: 30px;
     left: 20px;
+    font-size:x-large;
+    font-weight: bold;
 }
 
-.menu-items {
-    position: absolute;
-    top: 80px;
-    left: 40px;
-    
+.menu__items {
+    background-color: white;
+    font-size: 50px;
+    text-align: center;
+    margin: 5rem 3rem;
+    border: var(--border-grey) 2px solid;
+    border-radius: 10px; 
+}
+
+.menu__link{
+    padding: 1.5rem 0;
+}
+.menu__link > a{
+    color: var(--font-dark-green); 
+}
+
+.menu__link > a:hover{
+    font-weight: bold;
 }

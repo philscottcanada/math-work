@@ -19,7 +19,7 @@ function header() {
       <ul className="list">
         <div className='logo'>
           <li className='items menu-image' onClick={modalClick}>+</li>
-          <li className='items logo-image'><Link href={'/'}>Logo</Link></li>
+          <li className='items logo-image'><Link href={'/'}>MathSheets.Online</Link></li>
         </div>
         <div className='links-items'>
           <li className='items'><Link href={'/'}>Home</Link></li>
